@@ -1,5 +1,20 @@
 # Book a Table Exercise. Front End Skills Assessment
 
+### Screenshots
+
+* Booking form
+  https://drive.google.com/open?id=0B0BFezdo69sXOWZsSEJ4Rm1nT2M
+
+* List of reservations
+  https://drive.google.com/open?id=0B0BFezdo69sXSEltYVhnMmVwTFE
+
+* Postman: get (list bookings)
+  https://drive.google.com/open?id=0B0BFezdo69sXdUtjM3ByTFdjOEE
+
+* Postman: put (update single booking)
+  https://drive.google.com/open?id=0B0BFezdo69sXMlNUeWktVzJfTU0
+
+
 ## Front End Skills Assessment
 
 Estimated time: up to 2 hours (or whatever you feel necessary!)
