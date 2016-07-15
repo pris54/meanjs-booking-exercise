@@ -1,4 +1,4 @@
-# TableBookingTest. Front End Skills Assessment
+# Book a Table Exercise. Front End Skills Assessment
 
 ## Front End Skills Assessment
 
