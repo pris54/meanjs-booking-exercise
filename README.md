@@ -1,6 +1,6 @@
 # Book a Table Exercise. Front End Skills Assessment
 
-### Screenshots
+## Screenshots
 
 * Booking form
   https://drive.google.com/open?id=0B0BFezdo69sXOWZsSEJ4Rm1nT2M
