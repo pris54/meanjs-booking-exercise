@@ -1,0 +1,119 @@
+nav {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #d43f3a;
+}
+
+nav a,
+nav a:link,
+nav a:active,
+nav a:visited {
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #fcdcdb;
+}
+
+nav span {
+  color: #e17a76;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 25px;
+}
+
+.welcome {
+  background-color: #eaeaea;
+  border-left: 10px solid #cccccc;
+}
+
+.thank-you {
+  background-color: #e5efe4;
+  border-left: 10px solid #c3d7bf;
+}
+
+.error {
+  background-color: #f7dcda;
+  border-left: 10px solid #ebabac;
+}
+
+.booking-container {
+  max-width: 500px;
+}
+
+.reservations-container {
+  min-width: 400px;
+  max-width: 800px;
+}
+
+.form-group.user-bookingdate {
+  width: 180px;
+}
+
+.form-group.user-submit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.required label:after {
+  content: "*";
+  margin-left: 6px;
+}
+
+/* Table */
+.table-wrap {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.cell {
+  display: table-cell;
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.tiny {
+  width: 20px;
+  max-width: 20px;
+}
+
+.small {
+  width: 30px;
+}
+
+.medium {
+  width: 100px;
+}
+
+.long {
+  width: auto;
+}
+
+footer {
+  color: #cccccc;
+}
+
+.reservation-status,
+.reservation-status:link,
+.reservation-status:hover,
+.reservation-status:active,
+.reservation-status:visited {
+  text-decoration: none;
+}
+
+.not-checked-in:after {
+  content: "Pending";
+  color: #ff4144;
+}
+
+.checked-in:after {
+  content: "Checked-in";
+  color: #4eae47;
+}

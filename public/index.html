@@ -1,0 +1,29 @@
+<html ng-app="myApp" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Table - Lovely test</title>
+    <link href="css/bootstrap/dist/css/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="css/stylesheets/bookatable.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js" type="application/javascript"></script>
+    <script src="js/app.js" type="application/javascript"></script>
+    <script src="js/controllers/ReservationsController.js" type="application/javascript"></script>
+    <script src="js/controllers/BookingsController.js" type="application/javascript"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/#/reservations">Reservations</a> <span>|</span> <a href="/#/bookings">Bookings</a>
+        </div>
+    </nav>
+    <main class="container">
+        <section class="content" ui-view></section>
+    </main>
+    <footer class="container">
+        (c) 2016 Paula Molinero
+    </footer>
+</body>
+</html>

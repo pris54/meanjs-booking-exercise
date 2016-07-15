@@ -1,0 +1,33 @@
+{
+  "name": "pris54couk",
+  "version": "0.0.1",
+  "homepage": "http://localhost:3001/",
+  "authors": [
+    "Paula Molinero <pris54@gmail.com>"
+  ],
+  "description": "pris54.co.uk website",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "SW",
+    "London",
+    "Osteopathy"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-sanitize": "~1.3.15",
+    "angular-ui-router": "~0.2.13",
+    "underscore": "~1.8.3",
+    "requirejs": "~2.1.20"
+  }
+}

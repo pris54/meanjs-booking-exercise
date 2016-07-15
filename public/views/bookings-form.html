@@ -1,0 +1,99 @@
+<div class="booking-container" ng-controller="BookingsController as bkgCtrl">
+    <section>
+        <h1>Booking Form</h1>
+        <!-- Toggle between welcome and thank you messages -->
+        <div class="header" ng-class="{ 'welcome' : !bkgCtrl.thankYouText, 'thank-you' : bkgCtrl.thankYouText }">{{bkgCtrl.bookingFormText}}</div>
+    </section>
+
+    <form name="contact" ng-submit="bkgCtrl.submitContact()" novalidate>
+        <!-- First name -->
+        <div class="form-group required user-firstname" ng-class="{ 'has-error' : contact['user.name'].$invalid && !contact['user.name'].$pristine }">
+            <label>First name</label>
+            <input type="text"
+                   name="user.name"
+                   required
+                   class="form-control"
+                   ng-pattern="/^[a-zA-Z -]*$/"
+                   ng-maxlength="50"
+                   ng-model="bkgCtrl.user.name" />
+            <div ng-show="contact['user.name'].$invalid && !contact['user.name'].$pristine" class="form-error">Enter a valid name. Up to 50 letters, spaces and dashes are allowed.</div>
+        </div>
+
+        <!-- Surname -->
+        <div class="form-group user-surname" ng-class="{ 'has-error' : contact['user.surname'].$invalid && !contact['user.surname'].$pristine }">
+            <label>Surname</label>
+            <input type="text"
+                   name="user.surname"
+                   required
+                   class="form-control"
+                   ng-pattern="/^[a-zA-Z -]*$/"
+                   ng-maxlength="50"
+                   ng-model="bkgCtrl.user.surname" />
+            <div ng-show="contact['user.surname'].$invalid && !contact['user.surname'].$pristine" class="form-error">Enter a valid surname. Up to 50 letters, spaces and dashes are allowed.</div>
+        </div>
+
+        <!-- Booking date -->
+        <div class="form-group required user-bookingdate" ng-class="{ 'has-error' : contact['user.bookingDate'].$invalid && !contact['user.bookingDate'].$pristine }">
+            <label>Booking date</label>
+            <input type="date"
+                   name="user.bookingDate"
+                   class="form-control"
+                   ng-model="bkgCtrl.user.bookingDate"
+                   placeholder="yyyy-MM-dd"
+                   required />
+            <div ng-show="contact['user.bookingDate'].$invalid && !contact['user.bookingDate'].$pristine" class="form-error">Enter a valid date.</div>
+        </div>
+
+        <!-- How many people -->
+        <div class="form-group required user-howmany" ng-class="{ 'has-error' : contact['user.howMany'].$invalid && !contact['user.howMany'].$pristine }">
+            <label>How many people</label>
+            <input type="number"
+                   name="user.howMany"
+                   required
+                   class="form-control"
+                   ng-model="bkgCtrl.user.howMany"
+                   step="1"
+                   min="1"
+                   max="12" />
+            <div ng-show="contact['user.howMany'].$error.min" class="help-block">Enter at least 1.</div>
+            <div ng-show="contact['user.howMany'].$error.max" class="help-block">Please call us for groups larger than 12 people.</div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group required user-email" ng-class="{ 'has-error' : contact['user.email'].$invalid && !contact['user.email'].$pristine }">
+            <label>Email</label>
+            <input type="text"
+                   name="user.email"
+                   class="form-control"
+                   ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+                   ng-minlength="6"
+                   ng-maxlength="100"
+                   ng-model="bkgCtrl.user.email"
+                   required />
+            <div ng-show="contact['user.email'].$invalid && !contact['user.email'].$pristine" class="form-error">Enter a valid email address.</div>
+        </div>
+
+        <!-- Phone number -->
+        <div class="form-group user-phone" ng-class="{ 'has-error' : contact['user.phone'].$invalid && !contact['user.phone'].$pristine }">
+            <label>Phone</label>
+            <input type="text"
+                   name="user.phone"
+                   class="form-control"
+                   ng-maxlength="50"
+                   ng-pattern="/^[- +]*[0-9][- +0-9]*$/"
+                   ng-model="bkgCtrl.user.phone" />
+            <div ng-show="contact['user.phone'].$invalid && !contact['user.phone'].$pristine" class="form-error">Enter a valid phone number. Only numbers, spaces and plus sign (+) are allowed.</div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="form-group user-submit">
+            <button type="submit"
+                    id="submit"
+                    class="btn btn-primary"
+                    ng-class="{ 'btn-default' : contact.$invalid }"
+                    ng-disabled="contact.$invalid"
+                    >Book a table</button>
+            <a href="#" ng-click="bkgCtrl.resetForm($event);">Reset</a>
+        </div>
+    </form>
+</div>

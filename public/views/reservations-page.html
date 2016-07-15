@@ -1,0 +1,23 @@
+<div class="reservations-container" ng-controller="ReservationsController as rsvCtrl">
+    <section>
+        <h1>Reservations</h1>
+        <div class="header welcome" ng-show="!rsvCtrl.errorFound">List of reservations ordered by descending date.</div>
+        <!-- Show error message if any -->
+        <div class="header error" ng-show="rsvCtrl.errorFound">{{rsvCtrl.errorText}}</div>
+    </section>
+
+    <form>
+        <div class="table-wrap" ng-repeat="(key, value) in rsvCtrl.reservations | orderBy:'bookingDate'">
+            <div class="cell tiny">{{key}}</div>
+            <div class="cell medium" ng-bind="formatDate(value.bookingDate) |  date:'yyyy/MM/dd'"></div>
+            <div class="cell long">
+                {{value.name}} {{value.surname}}
+                <div><small>{{value.email}} / {{value.phone||'(na)'}}</small></div>
+            </div>
+            <div class="cell small">{{value.howMany}}</div>
+            <div class="cell medium">
+                <a href="#" ng-init="checkedInStatus=value.checkedIn" ng-click="checkedInStatus = !checkedInStatus; rsvCtrl.toggleStatus(value._id);" class="reservation-status" ng-class="{ 'not-checked-in' : !checkedInStatus, 'checked-in' : checkedInStatus }"></a>
+            </div>
+        </div>
+    </form>
+</div>
