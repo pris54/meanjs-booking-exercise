@@ -16,7 +16,7 @@
             </div>
             <div class="cell small">{{value.howMany}}</div>
             <div class="cell medium">
-                <a href="#" ng-init="checkedInStatus=value.checkedIn" ng-click="checkedInStatus = !checkedInStatus; rsvCtrl.toggleStatus(value._id);" class="reservation-status" ng-class="{ 'not-checked-in' : !checkedInStatus, 'checked-in' : checkedInStatus }"></a>
+                <a href="#" ng-init="checkedInStatus=value.checkedIn" ng-click="checkedInStatus = !checkedInStatus; rsvCtrl.toggleStatus(value._id);" class="btn btn-xs" ng-class="{ 'not-checked-in btn-info' : !checkedInStatus, 'checked-in btn-success' : checkedInStatus }"></a>
             </div>
         </div>
     </form>

@@ -110,10 +110,8 @@ footer {
 
 .not-checked-in:after {
   content: "Pending";
-  color: #ff4144;
 }
 
 .checked-in:after {
   content: "Checked-in";
-  color: #4eae47;
 }
