@@ -85,9 +85,7 @@ app.put('/api/booking/edit/:_id', function(req, res) {
             console.log('ERROR', err);
             res.send('ERROR: ' + err);
         } else {
-            console.log('OK', booking);
             booking.checkedIn = (booking.checkedIn !== true);
-            //res.send(booking);
 
             booking.save(function (err) {
                if (err) {
@@ -116,16 +114,16 @@ app.get('/api/booking/find/:_id', function(req, res) {
 });
 
 // Delete booking
-//app.delete('/api/booking/delete/:_id', function(req, res) {
-//    console.log('REQ.PARAMS DELETE', req.params);
-//    Booking.remove({
-//        _id : req.params._id
-//    }, function(err, booking) {
-//        if (err) {
-//            res.send(err);
-//        }
-//    });
-//});
+app.delete('/api/booking/delete/:_id', function(req, res) {
+    console.log('REQ.PARAMS_ID', req.params._id);
+    Booking.remove({
+        _id : req.params._id
+    }, function(err, booking) {
+        if (err) {
+            res.send(err);
+        }
+    });
+});
 
 // Listen (start app with node server.js) ======================================
 

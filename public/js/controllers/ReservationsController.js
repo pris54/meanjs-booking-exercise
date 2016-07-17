@@ -6,33 +6,44 @@
 angular.module('myApp.ReservationsController', [])
     .controller(
         'ReservationsController',
-        ['$http', '$location', '$scope', function($http, $filter, $scope) {
+        ['$http', '$scope', function($http, $scope) {
 
         var vm = this;
 
         vm.errorFound = false;
         vm.errorText = '';
-        vm.checkedInStatus = '?';
 
         // Format date
         $scope.formatDate = function(date){
             return new Date(date);
         };
 
+        // Update booking - checked-in status
         vm.toggleStatus = function(id) {
             $http.put('/api/booking/edit/' + id)
                 .success(function (data) {
-                    console.log('DATA!', data);
-                    console.log('CheckedIn', data.checkedIn);
                     vm.checkedInStatus = (status!==true);
-                    return 'oh';
                 })
                 .error(function (data) {
-                    console.log('ERROR', data);
+                    console.log('Error: ', data);
                 });
         };
 
-        // List bookings
+        // Deleting booking
+        vm.deleteBooking = function(id, key) {
+            var bookingRow = angular.element( document.querySelector( '#booking' + key ) );
+            bookingRow.empty();
+
+            $http.delete('/api/booking/delete/' + id)
+                .success(function (data) {
+                    vm.checkedInStatus = (status!==true);
+                })
+                .error(function (data) {
+                    console.log('Error: ', data);
+                });
+        };
+
+        // Listing bookings
         $http.get('/api/booking/list')
             .success(function(data) {
                 vm.reservations = data;

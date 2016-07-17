@@ -7,16 +7,19 @@
     </section>
 
     <form>
-        <div class="table-wrap" ng-repeat="(key, value) in rsvCtrl.reservations | orderBy:'bookingDate'">
+        <div class="table-wrap" ng-repeat="(key, value) in rsvCtrl.reservations | orderBy:'bookingDate'"  id="booking{{key}}">
             <div class="cell tiny">{{key}}</div>
-            <div class="cell medium" ng-bind="formatDate(value.bookingDate) |  date:'yyyy/MM/dd'"></div>
+            <div class="cell medium" ng-bind="formatDate(value.bookingDate) | date:'dd/MM/yyyy'"></div>
             <div class="cell long">
                 {{value.name}} {{value.surname}}
                 <div><small>{{value.email}} / {{value.phone||'(na)'}}</small></div>
             </div>
-            <div class="cell small">{{value.howMany}}</div>
+            <div class="cell medium">{{value.howMany}} people</div>
             <div class="cell medium">
                 <a href="#" ng-init="checkedInStatus=value.checkedIn" ng-click="checkedInStatus = !checkedInStatus; rsvCtrl.toggleStatus(value._id);" class="btn btn-xs" ng-class="{ 'not-checked-in btn-info' : !checkedInStatus, 'checked-in btn-success' : checkedInStatus }"></a>
+            </div>
+            <div class="cell small">
+                <a href="#" ng-click="rsvCtrl.deleteBooking(value._id, key);" class="btn btn-danger btn-xs">[x]</a>
             </div>
         </div>
     </form>
