@@ -1,12 +1,20 @@
 # Book a Table Exercise. Front End Skills Assessment
 
+## Start
+
+To start run ```grunt```. If this fails, then run:
+
+1. mongod --dbpath [path-to-project]/data
+2. nodemon server.js
+
+
 ## Screenshots
 
 * Booking form
   https://drive.google.com/open?id=0B0BFezdo69sXOWZsSEJ4Rm1nT2M
 
-* List of reservations
-  https://drive.google.com/open?id=0B0BFezdo69sXSEltYVhnMmVwTFE
+* List of reservations (UPDATED)
+  https://drive.google.com/open?id=0B0BFezdo69sXREpxLUpBWDJFUVk
 
 * Postman: get (list bookings)
   https://drive.google.com/open?id=0B0BFezdo69sXdUtjM3ByTFdjOEE

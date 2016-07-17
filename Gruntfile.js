@@ -2,7 +2,7 @@ var grunt = require('grunt');
 var shell = require('shelljs');
 
 grunt.registerTask('mongodb', "Start MongoDB server", function() {
-    shell.exec('mongod --dbpath /Users/paula/WebServer/tableBooking/data');
+    shell.exec('mongod --dbpath data');
 });
 
 grunt.registerTask('nodemon', "Start node server via nodemon", function() {
