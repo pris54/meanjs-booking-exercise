@@ -7,7 +7,7 @@
     </section>
 
     <form>
-        <div class="table-wrap" ng-repeat="(key, value) in rsvCtrl.reservations | orderBy:'bookingDate'"  id="booking{{key}}">
+        <div class="table-wrap" ng-repeat="(key, value) in rsvCtrl.reservations | orderBy:'value.bookingDate'"  id="booking{{key}}">
             <div class="cell tiny">{{key}}</div>
             <div class="cell medium" ng-bind="formatDate(value.bookingDate) | date:'dd/MM/yyyy'"></div>
             <div class="cell long">
